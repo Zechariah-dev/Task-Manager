@@ -25,7 +25,7 @@ router.post("/create", async (req, res) => {
     res.status(201).json({ msg: "task created", newTask });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ status: "failed", msg: "Internal Server Error" });
+    res.status(500).json({ msg: "Internal Server Error" });
   }
 });
 

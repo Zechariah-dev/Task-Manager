@@ -33,9 +33,12 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ urlencoded: true }));
 
-app.get('/', (req, res) => {
-  res.send('good morning')
-})
+app.get("/", (req, res) => {
+  res.send("good ebening");
+});
+
+app.use("/api/v1/user", require("./routes/user"));
+app.use("/api/v1/task", require("./routes/task"));
 
 app.listen(app.get("port") || process.env.PORT, () => {
   console.log("🚀 Task Manager server started:", config.publicDomain);
